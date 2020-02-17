@@ -11,13 +11,25 @@
 //==============================================================================
 //lets make an employee profile using closures
 
-  function employee (name,salary){
+  function employee (name,salary,n){
     return {
       name: name,
-      salary: salary
-    }   
+      salary: salary,
+      sayMyName : sayMyName,
+      sayHello : sayHello,
+      increaseSalary : increaseSalary 
+    }
   }
-
+ var sayMyName = function(){
+   return this.name;
+ }
+ var sayHello = function(){
+   return 'hello' + ' ' + this.name
+ }
+ var increaseSalary = function(n){
+   this.salary = this.salary + n;
+   return this.salary
+ }
   var employeeA = employee("jack", 100);
   var employeeB = employee("Mark", 200);
   var employeeC = employee("Sara", 150);
@@ -27,6 +39,7 @@
 
   // employeeA.sayMyName(); // "jack"
   // employeeB.sayMyName(); // "Mark"
+
 
 
   //now modify that closure and add a function that says hello to the employee name;
@@ -53,6 +66,11 @@
 //=============================================================================
   //lets create a pet class using OOP concept,
   // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
+  
+    function NameOfPet(initial) {
+      var namePet = {}
+      
+    }
 
   // var pet1 = Pet("doggy");
 
